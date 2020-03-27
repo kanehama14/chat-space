@@ -4,11 +4,10 @@
 
 html, body {
   height: 100%;
+  width: 100%;
 }
 
 .wrapper {
-  height: 100%;
-  width: 100vw;
   display: flex;
 }
 
@@ -18,32 +17,75 @@ html, body {
   &__user-name {
     height: 100px;
     background-color: #253141;
+    display: flex;
+    &__top-items {
+      height: 20px;
+      width: 260px;
+      margin: auto;
+      align-items: center;
+      // background-color: yellow;
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        line-height: 20px;
+        color: white;
+      }
+      &__icons {
+        width: 60px;
+        height: 20px;
+        line-height: 20px;
+        text-align: right;
+        &__new-group {
+          text-decoration: none;
+          color: #ffffff;
+          margin-right: 5px;
+        }
+        &__user-edit {
+          text-decoration: none;
+          color: #ffffff;
+
+        }
+      }
+    }
   }
   &__groups {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    &__box {
+      color: #ffffff;
+      padding: 20px 20px 40px 20px;
+      &__group-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__comment {
+        font-size: 11px;
+      }
+    }
   }
 }
 
 .chat-main {
   height: 100%;
   width: calc(100vw - 300px);
+  position: relative;
   &__group-info {
     height: 100px;
     width: 100vw;
     background-color: #ffffff;
     border-bottom: solid 1px #eeeeee;
+    position: fixed;
   }
   &__message-list {
     background-color: #fafafa;
-    height: calc(100vh - 100px - 90px);
+    height: calc(100% - 100px - 90px);
     width: 100vw;
   }
   &__message-form {
     height: 90px;
-    width: 100vw;
     background-color: #d2d2d2;
     position: fixed;
     bottom: 0;
+    width: 100vw;
   }
 }
