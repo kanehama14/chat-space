@@ -1,3 +1,23 @@
 * {
   box-sizing: border-box;
 }
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  .side-bar {
+    height: 100%;
+    width: 300px;
+    background-color: #253141;
+  }
+  .chat-main {
+    height: 100%;
+    width: calc(100vw-300px);
+    background-color: #ffffff;
+  }
+}
