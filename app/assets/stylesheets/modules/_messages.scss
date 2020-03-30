@@ -2,10 +2,10 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100vw;
-}
+// body {
+//   height: 100%;
+//   width: 100vw;
+// }
 
 .wrapper {
   display: flex;
@@ -53,7 +53,7 @@ html, body {
     background-color: #2f3e51;
     &__box {
       color: #ffffff;
-      padding: 20px 20px 40px 20px;
+      padding: 20px 20px 20px 20px;
       &__group-name {
         font-size: 15px;
         margin-bottom: 5px;
@@ -66,15 +66,15 @@ html, body {
 }
 
 .chat-main {
-  height: 100%;
   width: calc(100vw - 300px);
-  position: relative;
+  // position: relative;
+  float: left;
   &__group-info {
     height: 100px;
-    width: 100vw;
+    // width: 100vw;
     background-color: #ffffff;
     border-bottom: solid 1px #eeeeee;
-    position: fixed;
+    // position: fixed;
     display: flex;
     justify-content: space-between;
     &__leftbox {
@@ -105,14 +105,40 @@ html, body {
   }
   &__message-list {
     background-color: #fafafa;
-    height: calc(100% - 100px - 90px);
-    width: 100vw;
+    height: calc(100vh - 190px);
+    // width: 100vw;
+    // position: absolute;
+    // top: 100px;
+    padding: 35px 40px;
+    &__box {
+      padding-bottom: 46px;
+      &__info {
+        // background-color: yellow;
+        margin-bottom: 12px;
+        display: flex;
+        &__user {
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__time {
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__text {
+        color: #434A54;
+        font-size: 14px;
+      }
+    }
+
   }
   &__message-form {
     height: 90px;
     background-color: #d2d2d2;
-    position: fixed;
+    // position: fixed;
     bottom: 0;
-    width: 100vw;
+    // width: 100vw;
   }
 }
