@@ -14,7 +14,7 @@
       justify-content: space-between;
       &__name {
         line-height: 20px;
-        color: white;
+        color: $sideWhiteColor;
         font-weight: bold;
       }
       &__icons {
@@ -23,14 +23,11 @@
         line-height: 20px;
         text-align: right;
         &__new-group {
-          text-decoration: none;
-          color: #ffffff;
+          @include side-text-deco();
           margin-right: 5px;
         }
         &__user-edit {
-          text-decoration: none;
-          color: #ffffff;
-
+          @include side-text-deco();
         }
       }
     }
@@ -39,7 +36,7 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     &__box {
-      color: #ffffff;
+      color: $sideWhiteColor;
       padding: 20px 20px 20px 20px;
       &__group-name {
         font-size: 15px;
