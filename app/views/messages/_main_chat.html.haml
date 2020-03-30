@@ -1,5 +1,9 @@
 .chat-main
   .chat-main__group-info
+    .chat-main__group-info__leftbox
+      %p.chat-main__group-info__leftbox__group-name test
+      %p.chat-main__group-info__leftbox__member-list Member : users
+    = link_to "Edit", "#", class: "chat-main__group-info__group-edit-btn" 
   .chat-main__message-list
   .chat-main__message-form
   

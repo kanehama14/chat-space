@@ -4,7 +4,7 @@
 
 html, body {
   height: 100%;
-  width: 100%;
+  width: 100vw;
 }
 
 .wrapper {
@@ -23,12 +23,12 @@ html, body {
       width: 260px;
       margin: auto;
       align-items: center;
-      // background-color: yellow;
       display: flex;
       justify-content: space-between;
       &__name {
         line-height: 20px;
         color: white;
+        font-weight: bold;
       }
       &__icons {
         width: 60px;
@@ -75,6 +75,33 @@ html, body {
     background-color: #ffffff;
     border-bottom: solid 1px #eeeeee;
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+    &__leftbox {
+      margin: 35px 0 0 40px;
+      &__group-name {
+        color: #333333;
+        font-size: 20px;
+      }
+      &__member-list {
+        color: #999999;
+        font-size: 12px;
+        margin-top: 15px;
+      }
+    }
+    &__group-edit-btn {
+      position: fixed;
+      right: 40px;
+      top: 28px;
+      color: #38aef0;
+      font-size: 16px;
+      border: 1px solid #38aef0;
+      padding: 0 20px;
+      height: 40px;
+      line-height: 40px;
+      width: 72px;
+      text-decoration: none;
+    }
   }
   &__message-list {
     background-color: #fafafa;
