@@ -9,11 +9,10 @@
         = link_to edit_user_path(current_user), class: "side-bar__user-name__top-items__icons__user-edit" do
           = icon("fas", "cog")
   .side-bar__groups
-    .side-bar__groups__box
-      -# = link_to "#"
-      %p.side-bar__groups__box__group-name techcamp
-      %p.side-bar__groups__box__comment まだメッセージがありません
-    .side-bar__groups__box
-      -# = link_to "#"
-      %p.side-bar__groups__box__group-name techcamp
-      %p.side-bar__groups__box__comment まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side-bar__groups__box
+        = link_to "#" do
+          .side-bar__groups__box__group-name
+            = group.name
+          .side-bar__groups__box__comment
+            まだメッセージがありません
