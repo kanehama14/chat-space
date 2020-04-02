@@ -1,9 +1,14 @@
 .chat-main
   .chat-main__group-info
     .chat-main__group-info__leftbox
-      %p.chat-main__group-info__leftbox__group-name test
-      %p.chat-main__group-info__leftbox__member-list Member : users
-    = link_to "Edit", "#", class: "chat-main__group-info__group-edit-btn" 
+      .chat-main__group-info__leftbox__group-name
+        = @group.name
+      %ul.chat-main__group-info__leftbox__member-list
+        = "Member："
+        %li.member
+          - @group.users.each do |user|
+            = user.name
+    = link_to "Edit", edit_group_path(@group), class: "chat-main__group-info__group-edit-btn" 
   .chat-main__message-list
     = render @messages
   .chat-main__message-form

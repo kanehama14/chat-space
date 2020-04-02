@@ -17,6 +17,11 @@
         color: #999999;
         font-size: 12px;
         margin-top: 15px;
+        display: flex;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
+        }
       }
     }
     &__group-edit-btn {
