@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-       `<div class="chat-main__message-list__box">
+       `<div class="chat-main__message-list__box" data-message-id=${message.id}>
           <div class="chat-main__message-list__box__info">
             <div class="chat-main__message-list__box__info__user">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       var html =
-       `<div class="chat-main__message-list__box">
+       `<div class="chat-main__message-list__box" data-message-id=${message.id}>
           <div class="chat-main__message-list__box__info">
             <div class="chat-main__message-list__box__info__user">
               ${message.user_name}
@@ -39,6 +39,27 @@ $(function(){
       return html;
     };
   }
+
+  var reloadMessages = function() {
+    var last_message_id = $('.chat-main__message-list__box:last').data("message-id");
+    $.ajax({
+      url: "api/messages#index",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.chat-main__message-list').append(insertHTML);
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+
   $('#new_message').on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
@@ -61,4 +82,5 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   })
+  setInterval(reloadMessages, 7000);
 });
