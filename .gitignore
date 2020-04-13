@@ -19,3 +19,5 @@
 # 投稿された画像の保管場所
 public/uploads/*
 
+# 各種パスワードを扱うため追加
+config/secrets.yml
